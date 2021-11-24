@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:DemoKit="clr-namespace:DemoKit" 
+       xmlns:views="clr-namespace:DemoKit.Views"
+         xmlns:MaterialIconFont="clr-namespace:DemoKit.Helpers;assembly=DemoKit"
+       x:Class="DemoKit.AppShell"
+       TabBarForegroundColor="#000000"
+       TabBarTitleColor="#000000"
+       TabBarUnselectedColor="#88000000"
+       >
+    <TabBar>
+        <Tab Title="Home" Route="TabHome" >
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialDesignIcon" Glyph="{x:Static MaterialIconFont:IconFont.HomeAutomation}" />
+            </Tab.Icon>
+            <ShellContent Title="Home" Route="home" ContentTemplate="{DataTemplate views:MainView}" />
+        </Tab>
+        <Tab Title="AboutView" Route="TabAbout">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialDesignIcon" Glyph="{x:Static MaterialIconFont:IconFont.Information}" />
+            </Tab.Icon>
+            <ShellContent Title="AboutView" Route="AboutView" ContentTemplate="{DataTemplate views:AboutView}" />
+        </Tab>
+    </TabBar>
+    
+    <ShellContent Route="LoginView">
+        <views:LoginView />
+    </ShellContent>
+</Shell>
